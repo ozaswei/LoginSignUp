@@ -1,0 +1,72 @@
+﻿
+<style>
+    *{margin: 0;padding: 0}
+    body 
+    {
+        background-color: #f5683d;
+        padding-top:30vh;/*this increases the space between the top and contain top*/
+    }
+        .form-container /*we create class in CSS using '.'*/
+            {
+               width:500px;
+               height:auto;
+               padding: 50px 30px;
+               background-color:black;
+               border-radius: 10px;
+               box-shadow: 0 0 10px 0 #000;
+               margin:auto; /*This is used to put the form container in the middle*/
+            }
+        ul.list
+        {
+            list-style-type:none; /*it will remove the dots*/
+            text-align:center;
+        }
+        li.a1
+        {
+            width:250px;
+            margin:auto;
+        }
+        li.a1 input
+        {
+            width: 250px;
+            text-align:center;
+            padding: 8px 0px;
+            border:none;
+            margin-bottom:15px;
+            border-radius:5px;
+        }
+        li:nth-child(5)
+        {
+            color:red;
+        }
+        .user-img
+        {
+            background:url('../../Image/logo.png') no-repeat;
+            width: 200px;
+            height: 200px;
+            background-size:100%;
+            position:absolute;/*this cannot be overlapped guess if we set to page and it will stay at the page*/
+            top:100px;
+            left:530px;
+            border-radius:100%;
+            
+        }
+</style>
+@{
+    ViewBag.Title = "Members Login";
+}
+
+<div class="form-container"> @{ /*form-control is form-container*/}
+    <div class="user-img"></div>
+    <ul class="list">
+        <li class="a1"><h3>@ViewBag.Title</h3></li>
+        <li class="a1"><input id="Text1" type="text" name="username" placeholder="Type the Username Here"/></li>
+        <li class="a1"><input id="Password1" type="password" name="password" placeholder="Type the Password here"/></li>
+        <li class="a1"><input id="Submit1" type="submit" value="Login" class="btn btn-success"/></li>
+        <li class ="a1"><input id="Signup" type="submit" value="Signup" class=" btn btn-primary "/></li>
+        <li class="a1">Forget Password?</li>
+    </ul>
+</div>
+
+
+         

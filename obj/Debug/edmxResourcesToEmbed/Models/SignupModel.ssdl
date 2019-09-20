@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SignUpDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'E:\VISUAL STUDIO WORKS\PROGRAMMERSGUIDE\APP_DATA\SIGNUPDATA.MDF.dbo.Signup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Signup">
+    <Key>
+      <PropertyRef Name="Name " />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Password" />
+      <PropertyRef Name="Password2" />
+    </Key>
+    <Property Name="Name " Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password2" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SignUpDataModelStoreContainer">
+    <EntitySet Name="Signup" EntityType="Self.Signup" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Signup].[Name ] AS [Name ], 
+    [Signup].[Email] AS [Email], 
+    [Signup].[Password] AS [Password], 
+    [Signup].[Password2] AS [Password2]
+    FROM [dbo].[Signup] AS [Signup]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
